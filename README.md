@@ -104,7 +104,7 @@ Actual progress is computed from the task statuses in [`TRACKING.md`](TRACKING.m
 
 **Actual progress:** 0 of 110 core tasks done (0.0%). Optional tasks: 0 of 8.
 
-**Commit activity** (separate metric): n/a — computed on GitHub.
+**Commit activity** (separate metric): 3 commits in the last 7 days, 3 in total. A commit never completes a task.
 
 <details>
 <summary>Progress by work area</summary>
