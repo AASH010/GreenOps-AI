@@ -1,0 +1,11 @@
+{
+  "schema_version": "0.1.0",
+  "entity_id": "server-r2-s07",
+  "metric": "cpu_utilization",
+  "value": 93.5,
+  "unit": "percent",
+  "timestamp": "2026-11-25T10:00:00Z",
+  "source": "trace:scenario-a",
+  "provenance": "GUESSED",
+  "quality": "ok"
+}

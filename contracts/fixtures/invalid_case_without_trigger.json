@@ -1,0 +1,21 @@
+{
+  "schema_version": "0.1.0",
+  "case_id": "case-0001",
+  "status": "investigating",
+  "priority": "high",
+  "opened_at": "2026-11-25T10:00:00Z",
+  "evidence": [
+    {
+      "ref": "telemetry:rack-r2:cpu_utilization:09:30-10:00",
+      "kind": "telemetry",
+      "provenance": "REPLAYED"
+    }
+  ],
+  "data_quality": {
+    "status": "ok"
+  },
+  "hypothesis_ids": [
+    "hyp-0001",
+    "hyp-0002"
+  ]
+}

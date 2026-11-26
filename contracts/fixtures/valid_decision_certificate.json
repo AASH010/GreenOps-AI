@@ -1,0 +1,42 @@
+{
+  "schema_version": "0.1.0",
+  "certificate_id": "cert-0001",
+  "case_id": "case-0001",
+  "issued_at": "2026-11-25T10:30:00Z",
+  "recommendation": {
+    "action": "Review moving two workloads from rack 2 to rack 3.",
+    "advisory_only": true
+  },
+  "rationale": "The sandbox comparison favours the candidate under the stated constraints.",
+  "evidence_refs": [
+    "telemetry:rack-r2:cpu_utilization:09:30-10:00",
+    "exp-0001"
+  ],
+  "uncertainty": {
+    "summary": "Results depend on the simplified thermal model."
+  },
+  "tradeoffs": [
+    "Higher utilization on rack 3."
+  ],
+  "constraints_checked": [
+    "capacity",
+    "SLA",
+    "thermal"
+  ],
+  "assumptions": [
+    "Replayed workload is representative."
+  ],
+  "limitations": [
+    "Simulated values; no measured savings claimed."
+  ],
+  "provenance_labels": [
+    "REPLAYED",
+    "SIMULATED"
+  ],
+  "review": {
+    "state": "pending",
+    "reviewed_by": null,
+    "reviewed_at": null
+  },
+  "high_impact_execution": "blocked"
+}

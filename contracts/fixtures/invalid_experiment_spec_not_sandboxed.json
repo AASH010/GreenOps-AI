@@ -1,0 +1,23 @@
+{
+  "schema_version": "0.1.0",
+  "experiment_id": "exp-0001",
+  "case_id": "case-0001",
+  "hypothesis_ids": [
+    "hyp-0001",
+    "hyp-0002"
+  ],
+  "seed": 42,
+  "config": {
+    "scenario": "scenario-a",
+    "candidate": "rebalance-r2-to-r3"
+  },
+  "budget": {
+    "max_runtime_s": 120,
+    "max_runs": 3
+  },
+  "selection": {
+    "reason": "Best separates the placement hypothesis from the cooling hypothesis.",
+    "expected_information_value": 0.62
+  },
+  "sandbox_only": false
+}

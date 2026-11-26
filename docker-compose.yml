@@ -1,0 +1,33 @@
+# Local stack: backend + PostgreSQL (skeleton for task PLT-02). Generated but not yet run.
+# Required variables come from .env (copy .env.example). POSTGRES_PASSWORD must be set by you.
+services:
+  db:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: ${POSTGRES_USER:-greenops}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set POSTGRES_PASSWORD in .env}
+      POSTGRES_DB: ${POSTGRES_DB:-greenops}
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-greenops}"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  backend:
+    build:
+      context: .
+      dockerfile: docker/backend.Dockerfile
+    environment:
+      GREENOPS_ENV: ${GREENOPS_ENV:-development}
+      GREENOPS_CORS_ORIGINS: ${GREENOPS_CORS_ORIGINS:-http://localhost:5173}
+      GREENOPS_DATABASE_URL: postgresql://${POSTGRES_USER:-greenops}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB:-greenops}
+    ports:
+      - "8000:8000"
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  db-data:

@@ -1,0 +1,70 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:greenopsai:contracts:hypothesis:0.1.0",
+  "title": "Hypothesis",
+  "description": "A falsifiable explanation with the evidence for and against it. Draft v0.1.0 (task RES-01).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "hypothesis_id",
+    "case_id",
+    "statement",
+    "status",
+    "supporting_evidence",
+    "weakening_evidence",
+    "missing_evidence",
+    "falsifiable_by"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "hypothesis_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "case_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "statement": {
+      "type": "string",
+      "minLength": 1
+    },
+    "status": {
+      "enum": [
+        "open",
+        "supported",
+        "weakened",
+        "rejected",
+        "inconclusive"
+      ]
+    },
+    "supporting_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "weakening_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "missing_evidence": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "minLength": 1
+      }
+    },
+    "falsifiable_by": {
+      "type": "string",
+      "minLength": 1
+    }
+  }
+}

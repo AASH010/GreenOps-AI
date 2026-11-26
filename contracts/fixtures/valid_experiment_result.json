@@ -1,0 +1,26 @@
+{
+  "schema_version": "0.1.0",
+  "experiment_id": "exp-0001",
+  "started_at": "2026-11-25T10:00:00Z",
+  "finished_at": "2026-11-25T10:30:00Z",
+  "seed": 42,
+  "baseline_metrics": {
+    "max_rack_utilization": 0.0
+  },
+  "candidate_metrics": {
+    "max_rack_utilization": 0.0
+  },
+  "constraints_violated": [],
+  "uncertainty": {
+    "method": "repeated seeds",
+    "summary": "placeholder values only; see the experiment harness for real runs"
+  },
+  "provenance": "SIMULATED",
+  "model_version": "twin-0.0.0",
+  "assumptions": [
+    "Simplified power and thermal model."
+  ],
+  "limitations": [
+    "Not CFD-grade."
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:greenopsai:contracts:experiment-spec:0.1.0",
+  "title": "ExperimentSpec",
+  "description": "A bounded experiment, runnable only in the Digital Twin sandbox. Draft v0.1.0 (task RES-01).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "experiment_id",
+    "case_id",
+    "hypothesis_ids",
+    "seed",
+    "config",
+    "budget",
+    "selection",
+    "sandbox_only"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "experiment_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "case_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "hypothesis_ids": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "string"
+      }
+    },
+    "seed": {
+      "type": "integer"
+    },
+    "config": {
+      "type": "object"
+    },
+    "budget": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "max_runtime_s",
+        "max_runs"
+      ],
+      "properties": {
+        "max_runtime_s": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "max_runs": {
+          "type": "integer",
+          "minimum": 1
+        }
+      }
+    },
+    "selection": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "reason",
+        "expected_information_value"
+      ],
+      "properties": {
+        "reason": {
+          "type": "string",
+          "minLength": 1
+        },
+        "expected_information_value": {
+          "type": "number",
+          "minimum": 0
+        }
+      }
+    },
+    "sandbox_only": {
+      "const": true
+    }
+  }
+}

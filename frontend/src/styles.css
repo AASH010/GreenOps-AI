@@ -1,0 +1,99 @@
+:root {
+  --ink: #1b2e2b;
+  --green: #217a4f;
+  --light: #6fc79b;
+  --panel: #163b2e;
+  --bg: #0f2a22;
+  --text: #ffffff;
+  --muted: #9cc2b0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.page {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 32px 20px;
+}
+
+h1 {
+  margin: 0;
+}
+
+.tagline {
+  margin: 4px 0 16px;
+  color: var(--light);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  font-size: 13px;
+}
+
+.notice {
+  color: var(--muted);
+  border-left: 4px solid var(--green);
+  padding-left: 12px;
+}
+
+.legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  background: var(--panel);
+  border-radius: 10px;
+  padding: 16px;
+}
+
+.card h3 {
+  margin: 8px 0;
+}
+
+.card p {
+  color: var(--muted);
+}
+
+.id {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--light);
+}
+
+.badge {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  background: #3a5a4c;
+}
+
+.badge-measured {
+  background: var(--green);
+}
+
+.badge-replayed {
+  background: #2f6f8f;
+}
+
+.badge-estimated {
+  background: #b8860b;
+}
+
+.badge-simulated {
+  background: #7a4fa3;
+}

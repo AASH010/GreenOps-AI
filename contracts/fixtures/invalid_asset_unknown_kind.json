@@ -1,0 +1,13 @@
+{
+  "schema_version": "0.1.0",
+  "asset_id": "server-r2-s07",
+  "kind": "toaster",
+  "name": "Rack 2 / Server 7",
+  "parent_id": "rack-r2",
+  "capacity": {
+    "cpu_cores": 64,
+    "memory_gb": 512,
+    "power_w": 900
+  },
+  "provenance": "SIMULATED"
+}

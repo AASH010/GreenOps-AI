@@ -1,0 +1,14 @@
+{
+  "schema_version": "0.1.0",
+  "hypothesis_id": "hyp-0001",
+  "case_id": "case-0001",
+  "statement": "Workload placement concentrates load on rack 2.",
+  "status": "open",
+  "supporting_evidence": [
+    "telemetry:rack-r2:cpu_utilization:09:30-10:00"
+  ],
+  "weakening_evidence": [],
+  "missing_evidence": [
+    "inlet temperature for rack 2"
+  ]
+}

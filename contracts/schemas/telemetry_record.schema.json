@@ -1,0 +1,85 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:greenopsai:contracts:telemetry-record:0.1.0",
+  "title": "TelemetryRecord",
+  "description": "One normalized metric sample. Draft v0.1.0 (task DAT-01). Every record carries source, timestamp, unit, entity id and a provenance label.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "entity_id",
+    "metric",
+    "value",
+    "unit",
+    "timestamp",
+    "source",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "entity_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "metric": {
+      "type": "string",
+      "minLength": 1
+    },
+    "value": {
+      "type": [
+        "number",
+        "null"
+      ]
+    },
+    "unit": {
+      "type": "string",
+      "minLength": 1
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "pattern": "^\\d{4}-\\d{2}-\\d{2}T\\d{2}:\\d{2}:\\d{2}(\\.\\d+)?(Z|[+-]\\d{2}:\\d{2})$"
+    },
+    "source": {
+      "type": "string",
+      "minLength": 1
+    },
+    "provenance": {
+      "enum": [
+        "MEASURED",
+        "REPLAYED",
+        "ESTIMATED",
+        "SIMULATED"
+      ]
+    },
+    "quality": {
+      "enum": [
+        "ok",
+        "missing",
+        "suspect"
+      ]
+    }
+  },
+  "if": {
+    "properties": {
+      "value": {
+        "type": "null"
+      }
+    },
+    "required": [
+      "value"
+    ]
+  },
+  "then": {
+    "required": [
+      "quality"
+    ],
+    "properties": {
+      "quality": {
+        "const": "missing"
+      }
+    }
+  }
+}

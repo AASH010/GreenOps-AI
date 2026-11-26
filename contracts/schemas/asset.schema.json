@@ -1,0 +1,71 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "urn:greenopsai:contracts:asset:0.1.0",
+  "title": "Asset",
+  "description": "A node of the data-center topology. Draft v0.1.0 (task DAT-01).",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "asset_id",
+    "kind",
+    "name",
+    "parent_id",
+    "provenance"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "0.1.0"
+    },
+    "asset_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "kind": {
+      "enum": [
+        "site",
+        "zone",
+        "rack",
+        "server",
+        "cooling_unit",
+        "pdu"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "minLength": 1
+    },
+    "parent_id": {
+      "type": [
+        "string",
+        "null"
+      ]
+    },
+    "capacity": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "cpu_cores": {
+          "type": "integer",
+          "minimum": 1
+        },
+        "memory_gb": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        },
+        "power_w": {
+          "type": "number",
+          "exclusiveMinimum": 0
+        }
+      }
+    },
+    "provenance": {
+      "enum": [
+        "MEASURED",
+        "REPLAYED",
+        "ESTIMATED",
+        "SIMULATED"
+      ]
+    }
+  }
+}
