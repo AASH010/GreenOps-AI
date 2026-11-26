@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <p align="center">
   <img src="assets/greenopsai-logo.gif" alt="GreenOps AI" width="560">
 </p>
