@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <p align="center">
   <img src="assets/greenopsai-logo.gif" alt="GreenOps AI" width="560">
 </p>
@@ -184,3 +185,7 @@ A **task** is done when it is implemented as specified, its tests pass, another 
 ## License
 
 All rights reserved. Source is viewable for evaluation only; see [`LICENSE`](LICENSE).
+=======
+# GreenOps-AI
+Hybrid AI platform for data-center operations by SYNTRIX: unified cockpit, evidence-based diagnosis, forecasting, Digital Twin what-if experiments, and a bounded Operating Researcher that delivers auditable Decision Certificates. Simulation-only, safety-first prototype: no production control, every metric labelled.
+>>>>>>> 2572a18cc95e9e9cd9ccb897f91cd4b838910a00
